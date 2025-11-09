@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== RESET COMPLETO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== FULLSCREEN SIN BORDES ===== */
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* ===== PREVENIR SELECCIÓN ===== */
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* ===== OCULTAR SCROLLBARS ===== */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== PREVENIR ZOOM EN MÓVILES ===== */
+input, select, textarea, button {
+  font-size: 16px;
+}
+
+/* ===== PREVENIR SELECCIÓN ACCIDENTAL ===== */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ===== PREVENIR PULL-TO-REFRESH EN MÓVILES ===== */
+body {
+  overscroll-behavior: none;
+}
+
+
+/* Container principal */
+.pixel-progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Frame del progress bar */
+.progress-bar-frame {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.progress-bar-pixel {
+  width: 10px;
+  height: 10px;
+  background: white;
+}
+
+.progress-bar-border-left-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar-border-top-bottom {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Background del progress */
+.progress-bg {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bg-area {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.progress-bg-limit {
+  width: 10px;
+}
+
+/* Porcentaje display */
+.percentage {
+  position: absolute;
+  z-index: 10;
+  transform: translate(15px, 12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  margin-left: -40px;
+}
+
+.pixel-number {
+  display: grid;
+  grid-template-rows: repeat(5, 3px);
+  grid-template-columns: repeat(4, 3px);
+  margin: 0 2px;
+}
+
+.number-pixel {
+  width: 3px;
+  height: 3px;
+}
+
+/* Indicador de progreso (parte llena) */
+.indicator {
+  background: #a66fff;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+justify-content: flex-start;
+  transition: width 0.3s linear;
+  overflow: hidden;
+}
+
+.indicator-pixels {
+  display: grid;
+  grid-template-columns: repeat(4, 10px);
+  grid-template-rows: repeat(4, 10px);
+  flex-shrink: 0;
+}
+
+/* Parte vacía del progress */
+.empty {
+  width: 100%;
+  height: 100%;
+  min-width: 20px;
+  transform: translateY(-40px);
+  float: right;
+  display: flex;
+  transition: width 0.3s linear;
+}
+
+.empty .solid {
+  width: 100%;
+  height: 100%;
+}
+
+.empty .pixel-fade {
+  display: flex;
+}
+
+/* Clases de opacidad */
+.translucent {
+  opacity: 0.85;
+}
+
+.mid-translucent {
+  opacity: 0.6;
+}
+
+.transparent {
+  opacity: 0.5;
+}
+
+.mid-transparent {
+  opacity: 0.2;
+}
+
+.zero {
+  opacity: 0;
+}
+
+.light {
+  background: rgba(255, 255, 255, 0.067);
+}
+
+.relative-width {
+  width: 100%;
+}
+
+.purple {
+  background: #a66fff;
+}
