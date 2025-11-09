@@ -31,4 +31,4 @@ export const LOYALTY_TIERS: Record<string, LoyaltyTier> = {
   }
 };
 
-export const API_URL: string = import.meta.env.VITE_API_URL || 'https://bobs-corn.onrender.com/';
+export const API_URL: string = 'https://bobs-corn.onrender.com/';
