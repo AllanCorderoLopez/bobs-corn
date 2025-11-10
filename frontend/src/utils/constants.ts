@@ -27,8 +27,8 @@ export const LOYALTY_TIERS: Record<string, LoyaltyTier> = {
     minPurchases: 30,
     cooldownSeconds: 30,
     badge: "",
-    color: "#fb923c"
+    color: "#fb3c3c"
   }
 };
 
-export const API_URL: string = 'https://bobs-corn.onrender.com/';
+export const API_URL: string = 'http://localhost:3000/';

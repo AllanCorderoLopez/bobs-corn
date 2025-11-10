@@ -7,7 +7,7 @@ import {
   ClientToServerEvents,
 } from '../types';
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'https://bobs-corn.onrender.com/';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3000/';
 
 export function useCornFarm(clientId: string, isInitialized: boolean): CornFarmHook {
   const [state, setState] = useState<CornFarmState>({
