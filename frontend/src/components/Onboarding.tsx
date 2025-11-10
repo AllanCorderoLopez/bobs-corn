@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import onboard1 from "../assets/onboard1.png";
+import onboard2 from "../assets/onboard2.png";
+import onboard3 from "../assets/onboard3.png";
+import bob from "../assets/bob.png";
+import arrow from "../assets/arrow.png";
+
 interface OnboardingProps {
   onComplete: () => void;
 }
 
-const ONBOARDING_IMAGES = [
-  "/src/assets/onboard1.png",
-  "/src/assets/onboard2.png",
-  "/src/assets/onboard3.png",
-];
+const ONBOARDING_IMAGES = [onboard1, onboard2, onboard3];
 
 export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -26,7 +28,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   const handleComplete = () => {
     setIsVisible(false);
     localStorage.setItem("onboarding_completed", "true");
-    setTimeout(onComplete, 500); // Aumentado para que coincida con la animación
+    setTimeout(onComplete, 500); 
   };
 
   return (
@@ -50,7 +52,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
             className="onboarding-farmer"
           >
-            <img src="/src/assets/bob.png" alt="Granjero" />
+            <img src={bob} alt="Granjero" />
           </motion.div>
 
           {/* Imagen de pensamiento + controles con animación de entrada/salida */}
@@ -91,7 +93,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
               {/* Botón con imagen */}
               <button onClick={handleNext} className="onboarding-btn-next">
                 <img 
-                  src="/src/assets/arrow.png" 
+                  src={arrow} 
                   alt={currentStep < ONBOARDING_IMAGES.length - 1 ? "Siguiente" : "Empezar"}
                 />
               </button>
