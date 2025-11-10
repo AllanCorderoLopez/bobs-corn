@@ -61,7 +61,7 @@ Access at `http://localhost:5173`
 ### Growth Phases
 - **Planting** (0-33%): Initial stage
 - **Growing** (33-66%): Active growth
-- **Ready** (66-100%): Harvestable
+- **Ready** (100%): Harvestable
 
 ## Key WebSocket Events
 
